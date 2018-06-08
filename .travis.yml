@@ -4,13 +4,14 @@ node_js:
 branches:
   only:
   - master
+before_install:
+  - curl -sfo install.sh https://up.apex.sh/install
 install:
-  - echo 'install'
   - yarn --ignore-engines
 before_script:
-  - yarn add travis-up@0.0.8
+  - sh install.sh -b ./bin
 script: 
-  - echo 'script'
+  - ./bin/up version
 deploy:
   provider: script
   script: ./bin/up depoy production
