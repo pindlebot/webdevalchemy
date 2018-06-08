@@ -8,12 +8,13 @@ install:
   - yarn --ignore-engines
 script: 
   - yarn add travis-up
+before_deploy:
+  - ./bin/up version
+  - ls -lat
 deploy:
   provider: script
   script: ./bin/up depoy production
   skip_cleanup: true
-after_success:
-  - ./bin/up url
 
 env:
   global:
