@@ -10,10 +10,9 @@ script:
   - yarn add travis-up
 before_deploy:
   - ./bin/up version
-  - ls -lat
 deploy:
   provider: script
-  script: ./bin/up depoy production
+  script: ./bin/up deploy production
   skip_cleanup: true
 
 env:
