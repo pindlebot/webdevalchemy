@@ -1,0 +1,7 @@
+.cache
+bin
+src
+.babelrc
+.gitignore
+.travis.yml
+*.log

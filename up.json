@@ -1,0 +1,21 @@
+{
+  "name": "webdevalchemy",
+  "type": "static",
+  "static": {
+    "dir": "dist",
+    "prefix": "/assets/"
+  },
+  "stages": {
+    "staging": {
+      "domain": "dev.webdevalchemy.com",
+      "zone": "dev.webdevalchemy.com"
+    },
+    "production": {
+      "domain": "webdevalchemy.com",
+      "zone": "webdevalchemy.com"
+    }
+  },
+  "hooks": {
+    "prebuild": "yarn run build"
+  }
+}

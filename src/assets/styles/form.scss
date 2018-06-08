@@ -1,0 +1,37 @@
+@import './colors.scss';
+
+.form-control {
+  @extend .row;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+
+  input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: $primaryColorLight;
+    border-radius: 2px;
+    padding: 5px;
+    color: $white;
+    &::placeholder {
+      color: #000;
+      opacity: 1;
+    }
+  }
+
+  button {
+    outline: 0;
+    background: transparent;
+    border: 2px solid $textColor;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+}
+
+
+form {
+  border-top: 2px dashed;
+  border-right: 2px dashed;
+  padding: 20px 10px 10px 10px;
+}
