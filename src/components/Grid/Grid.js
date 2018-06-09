@@ -1,56 +1,27 @@
 import React from 'react'
-import Card from '../Card'
-import Sidebar from '../Sidebar'
-import classnames from 'classnames'
+import { Grid } from 'alchemy-ui'
+import withWidth from '.././../util/withWidth'
+import injectSheet from 'react-jss'
 
-class Grid extends React.PureComponent {
-  state = {
-    open: false
-  }
-
-  handleClose = () => {
-    if (this.state.open) {
-      this.setState({ open: false })
+const BaseGrid = props => {
+  let { width, height, open, ...rest } = props
+  let margin = open ? 310 : 60
+  let _width = (width || 700) - margin
+  let columns = Math.round(_width / 300)
+  const styles = {
+    grid: {
+      margin: `10px 10px 10px ${margin}px`
+    },
+    '@media (max-width: 400px)': {
+      grid: {
+        margin: `${margin}px 10px 10px 10px`
+      }
     }
   }
-
-  handleClick = () => {
-    this.setState(prev => ({ open: !prev.open }))
-  }
-
-  getColumns = () => {
-    const { width } = this.props.window
-    let offset = this.state.open ? 300 : 0
-    return (width - offset) > 768
-      ? 3
-      : (width - offset) > 481
-        ? 2
-        : 1
-  }
-
-  render () {
-    console.log(this.props)
-    const { open } = this.state
-    return (
-      <div className={classnames({ wrapper: true, ...this.state })}>
-        <Sidebar
-          open={open}
-          handleClick={this.handleClick}
-        />
-        <main
-          className={classnames('grid', `columns-${this.getColumns()}`)}
-        >
-          {this.props.tiles.map((tile, i) =>
-            <Card {...tile} key={i} />)
-          }
-        </main>
-      </div>
-    )
-  }
+  const Component = injectSheet(styles)(
+    ({ classes, ...rest }) => <Grid {...rest} className={classes.grid} />
+  )
+  return <Component {...rest} columns={columns} />
 }
 
-Grid.defaultProps = {
-  tiles: []
-}
-
-export default Grid
+export default withWidth(BaseGrid)

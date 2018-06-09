@@ -11,12 +11,15 @@
     "test": "echo 'ok'"
   },
   "dependencies": {
+    "alchemy-ui": "0.0.2",
     "classnames": "^2.2.5",
+    "jss": "^9.8.2",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
     "octicons": "^7.3.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "react-jss": "^8.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
