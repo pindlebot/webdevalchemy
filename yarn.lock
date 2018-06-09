@@ -113,7 +113,7 @@ ajv@^5.1.0, ajv@^5.2.3, ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-alchemy-ui@0.0.2:
+alchemy-ui@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/alchemy-ui/-/alchemy-ui-0.0.2.tgz#f0ffcee15014e2a7a0d77bed156de561112a8f78"
   dependencies:

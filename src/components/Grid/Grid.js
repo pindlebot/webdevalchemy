@@ -10,7 +10,8 @@ const BaseGrid = props => {
   let columns = Math.round(_width / 300)
   const styles = {
     grid: {
-      margin: `10px 10px 10px ${margin}px`
+      margin: `10px 10px 10px ${margin}px`,
+      gridAutoRows: 'calc(33vh - 10px)'
     },
     '@media (max-width: 400px)': {
       grid: {
