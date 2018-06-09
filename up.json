@@ -1,6 +1,7 @@
 {
   "name": "webdevalchemy",
   "type": "static",
+  "region": "us-west-2",
   "static": {
     "dir": "dist",
     "prefix": "/assets/"
