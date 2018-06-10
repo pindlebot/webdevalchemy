@@ -44,7 +44,10 @@ class Card extends React.PureComponent {
   render () {
     const { classes } = this.props
     const { flipped, hover } = this.state
-    const className = classNames(classes.root, flipped ? classes.flipped : undefined)
+    const className = classNames(
+      classes.root,
+      flipped ? classes.flipped : undefined
+    )
     return (
       <section
         className={className}

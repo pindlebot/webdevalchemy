@@ -6,7 +6,7 @@ const theme = {
   button: {
     //padding: '8px 16px',
     borderRadius: '2px',
-    border: '1px solid rgba(0, 0, 0, 0.23)',
+    // border: '1px solid rgba(0, 0, 0, 0.23)',
     backgroundColor: '#E7F6F6'
   },
   palette: {

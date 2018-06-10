@@ -11,7 +11,7 @@
     "test": "echo 'ok'"
   },
   "dependencies": {
-    "alchemy-ui": "^0.0.2",
+    "alchemy-ui": "^0.0.4",
     "classnames": "^2.2.5",
     "jss": "^9.8.2",
     "lodash.debounce": "^4.0.8",
