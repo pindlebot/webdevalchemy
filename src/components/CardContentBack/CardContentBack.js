@@ -1,7 +1,7 @@
 import React from 'react'
-import LinkExternalIcon from '../LinkExternalIcon'
-import GithubMarkIcon from '../GithubMarkIcon'
-import injectSheet from 'react-jss'
+// import { injectSheet } from 'alchemy-ui'
+import FontAwesome from '../FontAwesome'
+import { withStyles } from 'alchemy-ui'
 
 const CardContentBack = props => (
   <div className={props.classes.inset}
@@ -13,11 +13,11 @@ const CardContentBack = props => (
       evt.stopPropagation()
     }}>
     <div className={props.classes.detail}>
-      <LinkExternalIcon className={props.classes.mark} />
+      <FontAwesome icon={'link'} />
       <a href={props.website}>{props.website}</a>
     </div>
     <div className={props.classes.detail}>
-      <GithubMarkIcon className={props.classes.mark} />
+      <FontAwesome icon={'github'} />
       <a href={props.repo}>{props.repo}</a>
     </div>
   </div>
@@ -35,13 +35,13 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    backgroundColor: theme.palette.textColorLight,
+    // backgroundColor: theme.palette.textColorLight,
     borderRadius: '2px',
     width: 'auto',
     height: 'auto',
     padding: '1em',
     '&:hover': {
-      backgroundColor: theme.palette.textColorLight,
+      // backgroundColor: theme.palette.textColorLight,
       '& svg': {
         fill: theme.palette.white
       }
@@ -57,10 +57,10 @@ const styles = theme => ({
     alignItems: 'center',
     marginBottom: '10px',
     '& > a': {
-      color: theme.palette.gray,
+      color: '#34495e',
       textDecoration: 'none',
       '&:hover': {
-        color: theme.palette.white
+        color: '#333'
       }
     },
     '&:last-child': {
@@ -69,5 +69,4 @@ const styles = theme => ({
   }
 })
 
-export default injectSheet(styles)(CardContentBack)
-
+export default withStyles(styles)(CardContentBack)

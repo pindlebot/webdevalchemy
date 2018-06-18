@@ -1,6 +1,7 @@
 import React from 'react'
 import { FormControl, Input, Button } from 'alchemy-ui'
-import injectSheet from 'react-jss'
+import Textarea from '../Textarea'
+import { withStyles } from 'alchemy-ui'
 
 const styles = theme => ({
   input: {
@@ -17,11 +18,13 @@ const styles = theme => ({
     }
   },
   button: {
-    border: 0
+    border: 0,
+    color: '#7f8c8d'
   },
   form: {
-    border: '2px dashed #E7F6F6',
-    padding: '20px 10px 10px 10px'
+    border: '2px dashed #f6f6f6',
+    padding: '20px 10px 10px 10px',
+    marginBottom: '1em'
   },
   right: {
     justifyContent: () => 'flex-end'
@@ -31,7 +34,8 @@ const styles = theme => ({
 class ContactForm extends React.Component {
   state = {
     email: '',
-    name: ''
+    name: '',
+    message: ''
   }
 
   handleChange = (evt, key) => {
@@ -43,13 +47,18 @@ class ContactForm extends React.Component {
   render () {
     const { classes } = this.props
     return (
-      <form className={classes.form}>
+      <form
+        className={classes.form}
+        action={'https://formspree.io/bgardner620@gmail.com'}
+        method={'POST'}
+      >
         <FormControl>
           <Input
             placeholder='Name'
             onChange={evt => this.handleChange(evt, 'name')}
             value={this.state.name}
             className={classes.input}
+            name={'name'}
           />
         </FormControl>
         <FormControl>
@@ -58,14 +67,20 @@ class ContactForm extends React.Component {
             onChange={evt => this.handleChange(evt, 'email')}
             value={this.state.email}
             className={classes.input}
+            name={'email'}
           />
         </FormControl>
         <FormControl>
-          <div contentEditable />
+          <Textarea
+            value={this.state.message}
+            onChange={evt => this.handleChange(evt, 'message')}
+            name={'message'}
+          />
         </FormControl>
 
         <FormControl className={classes.right}>
           <Button
+            type={'submit'}
             className={classes.button}
             onClick={this.submit}>Submit</Button>
         </FormControl>
@@ -74,4 +89,4 @@ class ContactForm extends React.Component {
   }
 }
 
-export default injectSheet(styles)(ContactForm)
+export default withStyles(styles)(ContactForm)

@@ -5,21 +5,24 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf .cache && rimraf dist",
-    "dev": "parcel src/index.html",
-    "build": "NODE_ENV=production yarn run clean && parcel build src/index.html --public-url /assets/",
+    "dev": "parcel src/app.js",
+    "build": "NODE_ENV=production parcel build src/app.js",
     "lint": "standard \"src/*.js\" --parser babel-eslint",
-    "test": "echo 'ok'"
+    "test": "echo 'ok'",
+    "start": "node dist"
   },
   "dependencies": {
-    "alchemy-ui": "^0.0.4",
+    "alchemy-ui": "^0.0.11",
     "classnames": "^2.2.5",
-    "jss": "^9.8.2",
+    "http-status": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
-    "octicons": "^7.3.0",
-    "react": "^16.4.0",
+    "parcel-plugin-react-ssr": "^0.0.25",
+    "parcel-ssr": "^0.0.25",
+    "react": ">=0.13",
     "react-dom": "^16.4.0",
-    "react-jss": "^8.5.0"
+    "react-jss": "^8.5.1",
+    "recompose": "^0.27.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -27,9 +30,11 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-parcel": "^0.0.11",
     "babel-preset-react": "^6.24.1",
     "node-sass": "^4.9.0",
-    "parcel-bundler": "^1.8.1",
+    "parcel-bundler": "1.9.0",
+    "pushstate-server": "^3.0.1",
     "rimraf": "^2.6.2",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1"
@@ -38,6 +43,23 @@
     "parser": "babel-eslint",
     "ignore": [
       "node_modules"
+    ]
+  },
+  "parcel": {
+    "browser": [
+      "src/app.js",
+      {
+        "publicURL": "/assets/",
+        "scopeHoist": false,
+        "minify": true
+      }
+    ],
+    "node": [
+      "src/server.js",
+      {
+        "publicURL": "/assets/",
+        "scopeHoist": false
+      }
     ]
   }
 }

@@ -1,6 +1,5 @@
 {
   "name": "webdevalchemy",
-  "type": "static",
   "region": "us-west-2",
   "static": {
     "dir": "dist",
@@ -17,6 +16,5 @@
     }
   },
   "hooks": {
-    "prebuild": "yarn run build"
   }
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
-import SyncIcon from '../SyncIcon'
+import FontAwesome from '../FontAwesome'
+
 import CardContentFront from '../CardContentFront'
 import CardContentBack from '../CardContentBack'
-import injectSheet from 'react-jss'
+import { withStyles } from 'alchemy-ui'
 
-class Card extends React.PureComponent {
+class Card extends React.Component {
   state = {
     flipped: false,
     hover: false,
@@ -56,7 +57,9 @@ class Card extends React.PureComponent {
         onMouseOver={this.onMouseOver}
       >
         <div className={classes.cardContent}>
-          <SyncIcon />
+          <span className={classes.icon}>
+            <FontAwesome icon={'chevron-circle-right'} />
+          </span>
           {this.renderContent()}
         </div>
       </section>
@@ -82,7 +85,21 @@ const styles = theme => ({
     transformStyle: 'preserve-3d',
     overflow: 'hidden',
     borderRadius: '2px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    '& svg': {
+      fill: '#fff'
+    },
+    '& h2': {
+      color: '#fff'
+    }
+  },
+  icon: {
+    zIndex: 10,
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    cursor: 'pointer',
+    color: '#fff'
   },
   cardContent: {
     width: '100%',
@@ -92,27 +109,29 @@ const styles = theme => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     boxSizing: 'border-box',
-    padding: '3em'
+    padding: '2em',
+    color: '#34495e'
   },
   flipped: {
     transform: 'rotateY(180deg)',
     border: 0,
-    backgroundColor: theme.palette.textColor,
+    backgroundColor: '#fff',
     justifyContent: 'center',
     cursor: 'unset',
+    '& i': {
+      color: '#34495e'
+    },
     '& .flip-svg svg': {
       fill: '#B6D094'
     },
     '& .card-relief': {
       justifyContent: 'center',
       alignItems: 'flex-start',
-      backgroundColor: theme.palette.textColorLight,
       borderRadius: '2px',
       width: 'auto',
       height: 'auto',
       padding: '1em',
       '&:hover': {
-        backgroundColor: theme.palette.textColorLight,
         '& svg': {
           fill: theme.palette.white
         }
@@ -124,4 +143,4 @@ const styles = theme => ({
   }
 })
 
-export default injectSheet(styles)(Card)
+export default withStyles(styles)(Card)
