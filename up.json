@@ -16,5 +16,6 @@
     }
   },
   "hooks": {
+    "build": "yarn build"
   }
 }

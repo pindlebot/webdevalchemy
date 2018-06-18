@@ -18,7 +18,7 @@
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
     "parcel-plugin-react-ssr": "^0.0.25",
-    "parcel-ssr": "^0.0.25",
+    "parcel-ssr": "0.0.27",
     "react": ">=0.13",
     "react-dom": "^16.4.0",
     "react-jss": "^8.5.1",

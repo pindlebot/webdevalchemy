@@ -23,13 +23,12 @@ class Document extends React.Component {
     return (
       <html lang='en'>
         <Head data={data} {...meta}>
-          <style
+          {sheets && <style
             type='text/css'
-            dangerouslySetInnerHTML={{ __html: sheets }} id='ssr' />
+            dangerouslySetInnerHTML={{ __html: sheets }} id='ssr' />}
           <link
             rel='stylesheet'
             href='/assets/_root.css' />
-
         </Head>
         <Body src={src} />
       </html>
