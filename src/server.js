@@ -2,7 +2,7 @@ import path from 'path'
 import App from './app'
 import { SheetsRegistry, JssProvider } from 'react-jss'
 import React from 'react'
-import { ThemeProvider, createGenerateClassName } from 'alchemy-ui'
+import { AlchemyThemeProvider, createGenerateClassName } from 'alchemy-ui'
 import http from 'http'
 import { serverErrors } from 'parcel-bundler/src/utils/customErrors'
 import logger from 'parcel-bundler/src/Logger'
@@ -11,7 +11,7 @@ import middleware from 'parcel-ssr/lib/middleware/middleware'
 const port = process.env.PORT || 3000
 
 let server
-let counter = 0
+let warmedUp = false
 
 const createServer = async () => {
   const options = {
@@ -20,9 +20,10 @@ const createServer = async () => {
     registry: new SheetsRegistry()
   }
   const Wrapper = props => {
-    counter++
-    if (counter > 1) {
+    if (warmedUp) {
       options.registry = new SheetsRegistry()
+    } else {
+      warmedUp = true
     }
     const generateClassName = createGenerateClassName()
 
@@ -31,9 +32,9 @@ const createServer = async () => {
         registry={options.registry}
         generateClassName={generateClassName}
       >
-        <ThemeProvider theme={{}} sheetsManager={new Map()}>
+        <AlchemyThemeProvider theme={{}} sheetsManager={new Map()}>
           <App {...props} />
-        </ThemeProvider>
+        </AlchemyThemeProvider>
       </JssProvider>
     )
   }

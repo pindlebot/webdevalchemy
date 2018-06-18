@@ -12,13 +12,13 @@
     "start": "node dist"
   },
   "dependencies": {
-    "alchemy-ui": "^0.0.11",
+    "alchemy-ui": "^0.0.12",
     "classnames": "^2.2.5",
     "http-status": "^1.2.0",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
-    "parcel-plugin-react-ssr": "^0.0.25",
-    "parcel-ssr": "0.0.27",
+    "parcel-plugin-react-ssr": "^0.0.27",
+    "parcel-ssr": "^0.0.27",
     "react": ">=0.13",
     "react-dom": "^16.4.0",
     "react-jss": "^8.5.1",

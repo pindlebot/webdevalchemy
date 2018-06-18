@@ -130,10 +130,11 @@ ajv@^5.2.3, ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-alchemy-ui@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/alchemy-ui/-/alchemy-ui-0.0.11.tgz#60cb570db2c306d9b123d957a951551389d1c387"
+alchemy-ui@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/alchemy-ui/-/alchemy-ui-0.0.12.tgz#41027a49755e51d0493dba6620e3b4b13ca3c6bf"
   dependencies:
+    brcast "^3.0.1"
     classnames "^2.2.5"
     debounce "^1.1.0"
     deepmerge "^2.1.1"
@@ -3963,9 +3964,9 @@ parcel-plugin-package-json@^0.0.19:
   dependencies:
     fs-extra "^6.0.1"
 
-parcel-plugin-react-ssr@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/parcel-plugin-react-ssr/-/parcel-plugin-react-ssr-0.0.25.tgz#c066930b8d95358292ae7ea9be877a4a947fb559"
+parcel-plugin-react-ssr@^0.0.27:
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-react-ssr/-/parcel-plugin-react-ssr-0.0.27.tgz#b9bd9985fdb4822d97bf866d3e6f6f1ed412aa5f"
   dependencies:
     babel-preset-parcel "^0.0.11"
     debug "^3.1.0"
@@ -3973,23 +3974,13 @@ parcel-plugin-react-ssr@^0.0.25:
     parcel-plugin-babel-env "^0.0.19"
     parcel-plugin-bundle-node "^0.0.4"
     parcel-plugin-package-json "^0.0.19"
-    parcel-ssr "^0.0.25"
+    parcel-ssr "^0.0.27"
     serve-static "^1.13.2"
     url "^0.11.0"
 
-parcel-ssr@0.0.27:
+parcel-ssr@^0.0.27:
   version "0.0.27"
   resolved "https://registry.yarnpkg.com/parcel-ssr/-/parcel-ssr-0.0.27.tgz#fe889a28488961df9d27777ebcdef337c5e8e04d"
-  dependencies:
-    debug "^3.1.0"
-    get-port "^3.2.0"
-    prop-types "^15.6.1"
-    serve-static "^1.13.2"
-    url "^0.11.0"
-
-parcel-ssr@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/parcel-ssr/-/parcel-ssr-0.0.25.tgz#6830747db11e158f3dfdf2e42f917c1e0fbd72a6"
   dependencies:
     debug "^3.1.0"
     get-port "^3.2.0"
