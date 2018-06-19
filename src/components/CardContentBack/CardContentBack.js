@@ -1,5 +1,4 @@
 import React from 'react'
-// import { injectSheet } from 'alchemy-ui'
 import FontAwesome from '../FontAwesome'
 import { withStyles } from 'alchemy-ui'
 
@@ -43,7 +42,7 @@ const styles = theme => ({
     '&:hover': {
       // backgroundColor: theme.palette.textColorLight,
       '& svg': {
-        fill: theme.palette.white
+        fill: '#fff'
       }
     }
   },

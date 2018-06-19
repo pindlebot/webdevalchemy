@@ -13,24 +13,6 @@ const theme = {
     backgroundColor: '#f2f2f2',
     gray: '#E7F6F6',
     white: '#fff'
-  },
-  input: {
-    width: '100%',
-    borderRadius: '2px',
-    padding: '5px',
-    '&::placeholder': {
-      color: '#000'
-    }
-  },
-  menuItem: {
-    color: '#7f8c8d',
-    textAlign: 'right',
-    backgroundColor: '#f6f6f6',
-    borderRadius: '2px',
-    marginBottom: '10px',
-    '&:hover': {
-      backgroundColor: '#f6f6f6'
-    }
   }
 }
 

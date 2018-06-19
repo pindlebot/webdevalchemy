@@ -1,6 +1,33 @@
 import React from 'react'
-import { Head, Body } from 'parcel-ssr'
 import PropTypes from 'prop-types'
+
+const Script = ({ src }) =>
+  (<script src={src} type='text/javascript' />)
+
+const Body = props => (
+  <body>
+    <div id='root' />
+    <Script src={props.src} />
+    {props.children}
+  </body>
+)
+
+const Head = props => (
+  <head id={props.id}>
+    <title>{props.title}</title>
+    <script
+      type='text/javascript'
+      dangerouslySetInnerHTML={{ __html: props.data }}
+    />
+    {props.children}
+  </head>
+)
+
+Head.defaultProps = {
+  title: 'untitled',
+  id: 'parcel',
+  data: {}
+}
 
 class Document extends React.Component {
   render () {

@@ -3,9 +3,6 @@ import Card from '../../components/Card'
 import { Sidebar, withStyles } from 'alchemy-ui'
 import BaseGrid from '../../components/BaseGrid'
 import SidebarContent from '../../components/SidebarContent'
-import theme from './theme'
-import withThemeProvider from './withThemeProvider'
-import { compose } from 'recompose'
 
 const styles = {
   sidebarButton: {
@@ -25,7 +22,15 @@ const styles = {
     width: '100%'
   },
   menuItem: {
-    width: '100%'
+    width: '100%',
+    color: '#7f8c8d',
+    textAlign: 'right',
+    backgroundColor: '#f6f6f6',
+    borderRadius: '2px',
+    marginBottom: '10px',
+    '&:hover': {
+      backgroundColor: '#f6f6f6'
+    }
   },
   content: {
     display: 'flex',
@@ -90,7 +95,4 @@ class App extends React.Component {
   }
 }
 
-export default compose(
-  withThemeProvider(theme),
-  withStyles(styles)
-)(App)
+export default withStyles(styles)(App)

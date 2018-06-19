@@ -1,10 +1,10 @@
 import React from 'react'
-import { ThemeProvider } from 'react-jss'
+import { AlchemyThemeProvider } from 'alchemy-ui'
 
 const withThemeProvider = theme => Component => props => (
-  <ThemeProvider theme={theme}>
+  <AlchemyThemeProvider theme={theme}>
     <Component {...props} />
-  </ThemeProvider>
+  </AlchemyThemeProvider>
 )
 
 export default withThemeProvider

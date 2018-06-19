@@ -1,5 +1,5 @@
 import React from 'react'
-import { injectSheet } from 'alchemy-ui'
+import { withStyles } from 'alchemy-ui'
 
 const styles = theme => ({
   root: {
@@ -23,7 +23,7 @@ const styles = theme => ({
     font: 'inherit',
     resize: 'none',
     color: '#fff',
-    backgroundColor: theme.palette.primaryColorLight,
+    backgroundColor: '#2973b7',
     '&:focus': {
       outline: 0
     }
@@ -39,4 +39,4 @@ class Textarea extends React.Component {
   }
 }
 
-export default injectSheet(styles)(Textarea)
+export default withStyles(styles)(Textarea)

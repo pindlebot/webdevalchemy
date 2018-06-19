@@ -9,19 +9,16 @@
     "build": "NODE_ENV=production parcel build src/app.js",
     "lint": "standard \"src/*.js\" --parser babel-eslint",
     "test": "echo 'ok'",
-    "start": "node dist"
+    "start": "NODE_ENV=production node dist"
   },
   "dependencies": {
-    "alchemy-ui": "^0.0.12",
+    "alchemy-ui": "0.0.15",
     "classnames": "^2.2.5",
-    "http-status": "^1.2.0",
-    "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.0",
-    "parcel-plugin-react-ssr": "^0.0.27",
-    "parcel-ssr": "^0.0.27",
+    "parcel-plugin-react-ssr": "^0.0.28",
+    "parcel-ssr": "^0.0.28",
     "react": ">=0.13",
     "react-dom": "^16.4.0",
-    "react-jss": "^8.5.1",
     "recompose": "^0.27.1"
   },
   "devDependencies": {
@@ -33,8 +30,7 @@
     "babel-preset-parcel": "^0.0.11",
     "babel-preset-react": "^6.24.1",
     "node-sass": "^4.9.0",
-    "parcel-bundler": "1.9.0",
-    "pushstate-server": "^3.0.1",
+    "parcel-bundler": "1.9.1",
     "rimraf": "^2.6.2",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1"

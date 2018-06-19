@@ -1,25 +1,26 @@
 import React from 'react'
-import { FormControl, Input, Button } from 'alchemy-ui'
+import { FormControl, Input, Button, withStyles } from 'alchemy-ui'
 import Textarea from '../Textarea'
-import { withStyles } from 'alchemy-ui'
 
 const styles = theme => ({
   input: {
     width: '100%',
     border: 0,
     outline: 0,
-    background: theme.palette.primaryColorLight,
+    background: '#2973b7',
     borderRadius: '2px',
     padding: '5px',
-    color: theme.palette.white,
+    color: '#fff',
     '&::placeholder': {
-      color: theme.palette.white,
+      color: '#fff',
       opacity: 1
     }
   },
   button: {
     border: 0,
-    color: '#7f8c8d'
+    color: '#7f8c8d',
+    borderRadius: '2px',
+    backgroundColor: '#f6f6f6'
   },
   form: {
     border: '2px dashed #f6f6f6',
@@ -27,7 +28,7 @@ const styles = theme => ({
     marginBottom: '1em'
   },
   right: {
-    justifyContent: () => 'flex-end'
+    justifyContent: 'flex-end'
   }
 })
 

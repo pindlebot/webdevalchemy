@@ -77,9 +77,8 @@ Card.defaultProps = {
 
 const styles = theme => ({
   root: {
-    border: `1px solid ${theme.palette.borderColor}`,
-    boxShadow: '0 1px 2px 0 rgba(0, 0, 0, .05)',
-    backgroundColor: `${theme.palette.white}`,
+    boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)',
+    backgroundColor: '#fff',
     position: 'relative',
     transition: 'all 0.3s cubic-bezier(.25, .8, .25, 1)',
     transformStyle: 'preserve-3d',
@@ -133,7 +132,7 @@ const styles = theme => ({
       padding: '1em',
       '&:hover': {
         '& svg': {
-          fill: theme.palette.white
+          fill: '#fff'
         }
       }
     },
